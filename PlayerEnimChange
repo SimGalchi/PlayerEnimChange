@@ -1,0 +1,188 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class PlayerImage : MonoBehaviour
+{
+    public SpriteRenderer Psr;
+    public Sprite AImage;
+    public Sprite SImage;
+    public Sprite FImage;
+    public Sprite GImage;
+
+    public KeyCode AKeyCode;
+    public KeyCode SKeyCode;
+    public KeyCode FKeyCode;
+    public KeyCode GKeyCode;
+    Animator anim;
+    public GameObject resultsScreen;
+    public GameObject _1Text;
+    public GameObject _2Text;
+    public GameObject _3Text;
+    public GameObject _4Text;
+    public GameObject _5Text;
+    public GameObject _5_2Text;
+    public GameObject _5_3Text;
+    public GameObject _6Text;
+    public GameObject _7Text;
+    public GameObject _8Text;
+    public GameObject _9Text;
+    
+
+
+    void Start()
+    {
+        Psr = GetComponent<SpriteRenderer>();
+        anim = GetComponent<Animator>();
+        anim.Rebind();
+    }
+
+    void Update()
+    {
+        //A
+        if(Input.GetKeyDown(AKeyCode))
+        {
+            Psr.sprite = AImage;
+            anim.enabled = false;
+        }
+        if(Input.GetKeyUp(AKeyCode))
+        {
+            anim.enabled = true;   
+        }
+        //W
+         if(Input.GetKeyDown(SKeyCode))
+        {
+            Psr.sprite = SImage;
+            anim.enabled = false;
+        }
+        if(Input.GetKeyUp(SKeyCode))
+        {
+            anim.enabled = true;   
+        }
+        
+        //D
+         if(Input.GetKeyDown(FKeyCode))
+        {
+            Psr.sprite = FImage;
+            anim.enabled = false;
+        }
+        if(Input.GetKeyUp(FKeyCode))
+        {
+            anim.enabled = true;   
+        }
+
+        //S
+         if(Input.GetKeyDown(GKeyCode))
+        {
+            Psr.sprite = GImage;
+            anim.enabled = false;
+        }
+        if(Input.GetKeyUp(GKeyCode))
+        {
+            anim.enabled = true;   
+        }
+    }
+
+    void OnTriggerEnter2D(Collider2D other) 
+    {
+        if(other.tag == "Finish")
+        {
+            resultsScreen.SetActive(true);
+        }
+
+        if(other.tag == "Text_1")
+        {
+            _1Text.SetActive(true);
+        }
+        if(other.tag == "Text_2")
+        {
+            _2Text.SetActive(true);
+        }
+         if(other.tag == "Text_3")
+        {
+            _3Text.SetActive(true);
+        }
+        if(other.tag == "Text_4")
+        {
+            _4Text.SetActive(true);
+        }
+        if(other.tag == "Text_5")
+        {
+            _5Text.SetActive(true);
+        }
+         if(other.tag == "Text_5_1")
+        {
+            _5_2Text.SetActive(true);
+        }
+          if(other.tag == "Text_5_2")
+        {
+            _5_3Text.SetActive(true);
+        }
+        if(other.tag == "Text_6")
+        {
+            _6Text.SetActive(true);
+        }
+        if(other.tag == "Text_7")
+        {
+            _7Text.SetActive(true);
+        }
+        if(other.tag == "Text_8")
+        {
+            _8Text.SetActive(true);
+        }
+        if(other.tag == "Text_9")
+        {
+            _9Text.SetActive(true);
+        }
+    }
+    
+    void OnTriggerExit2D(Collider2D other)
+    {
+        if(other.tag == "Text_1")
+        {
+            _1Text.SetActive(false);
+        }
+        if(other.tag == "Text_2")
+        {
+            _2Text.SetActive(false);
+        }
+        if(other.tag == "Text_3")
+        {
+            _3Text.SetActive(false);
+        }
+        if(other.tag == "Text_4")
+        {
+            _4Text.SetActive(false);
+        }
+         if(other.tag == "Text_5")
+        {
+            _5Text.SetActive(false);
+        }
+         if(other.tag == "Text_5_1")
+        {
+            _5_2Text.SetActive(false);
+        }
+          if(other.tag == "Text_5_2")
+        {
+            _5_3Text.SetActive(false);
+        }
+        if(other.tag == "Text_6")
+        {
+            _6Text.SetActive(false);
+        }
+        if(other.tag == "Text_7")
+        {
+            _7Text.SetActive(false);
+        }
+        if(other.tag == "Text_8")
+        {
+            _8Text.SetActive(false);
+        }
+        if(other.tag == "Text_9")
+        {
+            _9Text.SetActive(false);
+        }
+    }
+
+
+}
